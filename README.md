@@ -1,5 +1,5 @@
 # webcam-stuff
-Ad Blocker Prototype - a fork of
+Ad Blocker Prototype - a fork of https://github.com/eduardolundgren/tracking.js/blob/master/examples/face_camera.html
 
 #@TODO
 
