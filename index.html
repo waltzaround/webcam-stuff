@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta content="test, webcam, advertising, tech" name="keywords">
+		<title>Webcam Test</title>
+		<!--source 1: https://www.kirupa.com/html5/accessing_your_webcam_in_html5.htm for how to use webcam API-->
+
+		<style>
+		#container {
+			margin: 0px auto;
+			width: 500px;
+			height: 375px;
+			border: 10px #333 solid;
+
+		}
+
+		#videoElement {
+			width: 500px;
+			height: 375px;
+			background-color: #666;
+		}
+		</style>
+	</head>
+
+	<!-- use these div and video elements to show the user what we are doing -->
+	<body>
+		<div id="container">
+			<video autoplay="true" id="videoElement">
+			</video>
+		</div>
+
+		<!-- video script begins here -->
+		<script>
+		var video = document.querySelector("#videoElement");
+		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia ||navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
+
+		if (navigator.getUserMedia) { navigator.getUserMedia({video:true}, handleVideo, videoError);
+		}
+
+		function handleVideo(stream) { video.src = window.URL.createObjectURL(stream);}
+
+		function videoError(e) {
+			console.log("Something with the video fucked up");
+		}
+
+
+
+
+		</script>
+	</body>
+
+
+
+</html>
