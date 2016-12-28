@@ -16,6 +16,11 @@
 	  		margin-top: 120px;
 	  		position: absolute;
 	  	}
+	  	iframe {
+	  		float:right;
+	  	}
+
+
 	  	</style>
 	</head>
 
@@ -23,13 +28,15 @@
 		<div class="demo-title">
 			<p>lol lol lol </p>
 		</div>
-
+		</div>
+		
 		<div class="demo-frame">
 			<div class="demo-container">
+				<iframe class="youtube" width="640" height="360" src="https://www.youtube.com/embed/5_pMx7IjYKE" frameborder="0" allowfullscreen></iframe>
 				<video id="video" width="320" height="240" preload autoplay loop muted></video>
 				<canvas id="canvas" width="320" height="240"></canvas>
 			</div>
-		</div>
+
 
 		<script>
 			window.onload = function() {
@@ -45,11 +52,13 @@
 				tracking.track('#video', tracker, { camera: true });
 
 				tracker.on('track', function(event) {
+					console.log("I DON'T SEE YOU. WHERE ARE YOU?!")
 					// pause video to go here
 					// unmute audio to go here
 					context.clearRect(0, 0, canvas.width, canvas.height);
 
 					event.data.forEach(function(rect) {
+						console.log("I SEE YOU :D")
 						//play video to go here
 						//mute audio to go here
 						context.strokeStyle = '#a64ceb';
